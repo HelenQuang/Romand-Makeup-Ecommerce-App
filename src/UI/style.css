@@ -61,7 +61,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 25px;
+  border-radius: 9px;
   font: inherit;
   width: 13rem;
   height: 4rem;
@@ -76,7 +76,7 @@
 .badge {
   background-color: #facdd2;
   padding: 0.25rem 1rem;
-  border-radius: 25px;
+  border-radius: 9px;
 }
 
 .bump {
@@ -98,6 +98,35 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+.promotion-bar {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 60rem;
+  background-color: #f98896;
+  padding: 1rem;
+  margin-left: 70rem;
+  border-radius: 0 0 9px 9px;
+}
+
+.promotion-bar span::before {
+  content: "Worldwide shipping - Fast delivery";
+  animation: animate infinite 12s;
+}
+
+@keyframes animate {
+  0% {
+    content: "Worldwide shipping - Fast delivery";
+  }
+
+  33% {
+    content: "Free shipping on order over €50";
+  }
+
+  66% {
+    content: "20% discount on your first order - CODE: WELCOME";
   }
 }
 
