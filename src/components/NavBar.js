@@ -29,9 +29,6 @@ const NavBar = () => {
           <AccountBtn />
         </div>
       </header>
-      <div className="promotion-bar">
-        <span></span>
-      </div>
     </>
   );
 };
