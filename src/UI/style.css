@@ -6,14 +6,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fdf2e9;
+  background-color: #facdd2;
   height: 9.6rem;
   padding: 0 4.8rem;
   position: relative;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .logo {
-  height: 2.2rem;
+  height: 7rem;
+  border-radius: 9px;
 }
 
 /**************************/
@@ -25,6 +28,9 @@
   display: flex;
   align-items: center;
   gap: 4.8rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
 .main-nav-link:link,
@@ -32,27 +38,67 @@
   display: inline-block;
   text-decoration: none;
   color: #333;
-  font-weight: 500;
-  font-size: 1.8rem;
   transition: all 0.3s;
 }
 
 .main-nav-link:hover,
 .main-nav-link:active {
-  color: #cf711f;
+  color: #f98896;
 }
 
-.main-nav-link.nav-cta:link,
-.main-nav-link.nav-cta:visited {
-  padding: 1.2rem 2.4rem;
-  border-radius: 9px;
-  color: #fff;
-  background-color: #e67e22;
+.nav-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.main-nav-link.nav-cta:hover,
-.main-nav-link.nav-cta:active {
-  background-color: #cf711f;
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: #333;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  font: inherit;
+  width: 13rem;
+  height: 4rem;
+  margin: 0 5rem;
+}
+
+.button:hover,
+.button:active {
+  background-color: #f98896;
+}
+
+.badge {
+  background-color: #facdd2;
+  padding: 0.25rem 1rem;
+  border-radius: 25px;
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* MOBILE */
@@ -202,12 +248,12 @@
 }
 
 .cta-img-box {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       to right bottom,
       rgba(235, 151, 78, 0.35),
       rgba(230, 125, 34, 0.35)
     ),
-    url("");
+    url(""); */
   background-size: cover;
   background-position: center;
 }
