@@ -185,33 +185,117 @@
   border-radius: 15px;
 }
 
-/**************************/
-/* FEATURED IN SECTION */
-/**************************/
-
-.section-featured {
-  padding: 4.8rem 0 3.2rem 0;
-}
-
-.heading-featured-in {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.75px;
-  font-weight: 500;
+/* .swiper-pagination-bullets {
   text-align: center;
-  margin-bottom: 2.4rem;
-  color: #888;
-}
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  color: #facdd2;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+} */
 
-.logos {
+/* .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #facdd2;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+} */
+
+/**************************/
+/* SWIPER */
+/**************************/
+/* .swiper {
+  width: 100%;
+  height: 100%;
+} */
+
+.swiper-slide {
+  /* Center slide text vertically */
+  /* display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: space-around;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; */
+}
+/* .active {
+  background-color: #fcbec5;
 }
 
-.logos img {
-  height: 3.2rem;
-  filter: brightness(0);
-  opacity: 50%;
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+
+/**************************/
+/* MEALS SECTION */
+/**************************/
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-img {
+  width: 100%;
 }
 
 /**************************/
