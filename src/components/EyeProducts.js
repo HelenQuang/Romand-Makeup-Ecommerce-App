@@ -2,7 +2,7 @@ import React from "react";
 
 const Dummy_eye = [
   {
-    name: "#01 Pampas Garden",
+    name: "Pampas Garden",
     price: 23.9,
     colors: ["#01 Pampas Garden"],
     imgUrls: [
@@ -11,7 +11,7 @@ const Dummy_eye = [
     ],
   },
   {
-    name: "#02 Maghogany Garden",
+    name: "Maghogany Garden",
     price: 23.9,
     colors: ["#02 Maghogany Garden"],
     imgUrls: [
@@ -22,7 +22,32 @@ const Dummy_eye = [
 ];
 
 const EyeProducts = () => {
-  return <div>EyeProducts</div>;
+  const eyeItem = Dummy_eye.map((item) => (
+    <div className="item">
+      <img src={item.imgUrls[0]} className="item-img" alt="Lip" />
+      <div className="item-content">
+        <p className="item-title">{item.name}</p>
+        <ul className="item-attributes">
+          <li className="item-attribute">
+            <span className="price">€ {item.price}</span>
+          </li>
+          <li className="item-attribute">
+            <span>Color: {item.colors}</span>
+          </li>
+          <button className="btn btn--outline">Add To Cart</button>
+        </ul>
+      </div>
+    </div>
+  ));
+
+  return (
+    <section class="section-items">
+      <div class="container center-text">
+        <h2 class="heading-secondary">Our Eye Products</h2>
+      </div>
+      <div class="container grid grid--3-cols margin-bottom-md">{eyeItem}</div>
+    </section>
+  );
 };
 
 export default EyeProducts;

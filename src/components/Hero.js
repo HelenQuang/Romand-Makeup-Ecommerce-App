@@ -1,6 +1,6 @@
 import eye from "../images/eye palete.jpeg";
 import lip from "../images/lip.jpeg";
-import Swiper from "react-id-swiper";
+//import Swiper from "react-id-swiper";
 
 const Hero = () => {
   // const params = {
