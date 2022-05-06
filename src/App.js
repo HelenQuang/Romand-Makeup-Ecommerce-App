@@ -1,8 +1,8 @@
-import "../src/UI/general.css";
-import "../src/UI/style.css";
+import "./UI/general.css";
+import "./UI/homePage.css";
+import "./UI/loginPage.css";
+import "./UI/cartPage.css";
 import HomePage from "./pages/HomePage";
-import LipProducts from "./pages/LipProducts";
-import EyeProducts from "./pages/EyeProducts";
 import LogInPage from "./pages/LogInPage";
 import SignUpPage from "./pages/SignUpPage";
 import CartPage from "./pages/CartPage";
@@ -18,8 +18,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/lip" element={<LipProducts />} />
-          <Route path="/eye" element={<EyeProducts />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
@@ -28,7 +26,6 @@ function App() {
           <Route path="/payment" element={<PaymentPage />} />
         </Routes>
       </Router>
-      {/* <navbar></navbar> */}
     </>
   );
 }

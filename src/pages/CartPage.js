@@ -1,7 +1,13 @@
-import React from "react";
+import Cart from "../components/Cart";
+import EmptyCart from "../components/EmptyCart";
 
 const CartPage = () => {
-  return <div>CartPage</div>;
+  return (
+    <div>
+      <Cart />
+      <EmptyCart />
+    </div>
+  );
 };
 
 export default CartPage;

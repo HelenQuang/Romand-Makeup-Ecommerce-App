@@ -199,14 +199,14 @@ body {
 }
 
 .btn--form {
-  background-color: #fbb2ba;
+  background-color: #f98895c2;
   color: #555;
   padding: 1.2rem 2rem;
   margin: 2rem 0 0 5rem;
 }
 
 .btn--form:hover {
-  background-color: #f98896;
+  background-color: #f87887;
   color: #555;
 }
 
