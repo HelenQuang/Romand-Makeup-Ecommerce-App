@@ -1,7 +1,13 @@
-import React from "react";
+import OrderSummary from "../components/OrderSummary";
+import ShippingInfo from "../components/ShippingInfo";
 
 const CheckoutPage = () => {
-  return <div>CheckoutPage</div>;
+  return (
+    <div>
+      <OrderSummary />
+      <ShippingInfo />
+    </div>
+  );
 };
 
 export default CheckoutPage;

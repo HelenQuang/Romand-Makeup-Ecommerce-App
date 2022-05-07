@@ -43,7 +43,7 @@ const Dummy_cart = [
   },
 ];
 
-const Cart = () => {
+const OrderSummary = () => {
   const navigate = useNavigate();
 
   const cartItems = Dummy_cart.map((item) => (
@@ -57,10 +57,6 @@ const Cart = () => {
         <span className="price">{`€${item.price}`}</span>
         <span className="amount">x {item.amount}</span>
       </div>
-      <div className="cart-actions">
-        <button className="btn btn--form">-</button>
-        <button className="btn btn--form">+</button>
-      </div>
     </li>
   ));
 
@@ -69,35 +65,29 @@ const Cart = () => {
       <div className="container">
         <div className="cart">
           <div className="cart-text-box">
-            <h2 className="heading-secondary">Your Cart</h2>
+            <h2 className="heading-secondary">Order Summary</h2>
             {cartItems}
+          </div>
+          <div className="cart-subtotal">
+            <span className="subtotal">Shipping cost:</span>
+            <span className="price">€5</span>
           </div>
           <div className="cart-subtotal">
             <span className="subtotal">Subtotal:</span>
             <span className="price">€57.5</span>
           </div>
-          <div className="cart-btn">
-            <button
-              className="btn btn--form"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Continue shopping
-            </button>
-            <button
-              className="btn btn--form"
-              onClick={() => {
-                navigate("/checkout");
-              }}
-            >
-              Check out
-            </button>
-          </div>
+          <button
+            className="btn btn--form"
+            onClick={() => {
+              navigate("/cart");
+            }}
+          >
+            Edit cart
+          </button>
         </div>
       </div>
     </section>
   );
 };
 
-export default Cart;
+export default OrderSummary;
