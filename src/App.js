@@ -2,6 +2,7 @@ import "./UI/general.css";
 import "./UI/homePage.css";
 import "./UI/loginPage.css";
 import "./UI/cartPage.css";
+import "./UI/chekoutPage.css";
 import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LogInPage";
 import SignUpPage from "./pages/SignUpPage";

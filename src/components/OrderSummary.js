@@ -61,7 +61,7 @@ const OrderSummary = () => {
   ));
 
   return (
-    <section className="section-cart">
+    <section className="section-summary">
       <div className="container">
         <div className="cart">
           <div className="cart-text-box">
@@ -77,12 +77,12 @@ const OrderSummary = () => {
             <span className="price">€57.5</span>
           </div>
           <button
-            className="btn btn--form"
+            className="btn btn--edit"
             onClick={() => {
               navigate("/cart");
             }}
           >
-            Edit cart
+            Return to cart
           </button>
         </div>
       </div>

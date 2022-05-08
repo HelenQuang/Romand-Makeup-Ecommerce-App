@@ -91,7 +91,7 @@ const Cart = () => {
                 navigate("/checkout");
               }}
             >
-              Check out
+              Go to check out
             </button>
           </div>
         </div>

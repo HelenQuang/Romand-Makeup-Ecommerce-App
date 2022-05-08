@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 
 const Dummy_lip = [
   {
@@ -27,9 +27,20 @@ const Dummy_lip = [
 ];
 
 const LipProducts = () => {
+  //Fetch products
+  // useEffect(() => {
+  //   const fetchLips = async () => {
+  //     const res = await fetch("");
+  //   };
+  // }, []);
+
   const lipItem = Dummy_lip.map((item) => (
     <div className="item">
-      <img src={item.imgUrls[0]} className="item-img" alt="Lip" />
+      <div className="img-container">
+        <img src={item.imgUrls[0]} className="item-img img1" alt="Lip 1" />
+        <img src={item.imgUrls[1]} className="item-img img2" alt="Lip 2" />
+      </div>
+
       <div className="item-content">
         <p className="item-title">{item.name}</p>
         <ul className="item-attributes">
@@ -55,9 +66,9 @@ const LipProducts = () => {
   ));
 
   return (
-    <section class="section-items">
+    <section class="section-items" id="lip-products">
       <div class="container center-text">
-        <h2 class="heading-secondary">Our Lip Products</h2>
+        <h2 class="heading-secondary color-change">Our Lip Products</h2>
       </div>
       <div class="container grid grid--3-cols margin-bottom-md">{lipItem}</div>
     </section>

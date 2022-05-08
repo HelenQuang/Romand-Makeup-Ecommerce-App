@@ -24,7 +24,10 @@ const Dummy_eye = [
 const EyeProducts = () => {
   const eyeItem = Dummy_eye.map((item) => (
     <div className="item">
-      <img src={item.imgUrls[0]} className="item-img" alt="Lip" />
+      <div className="img-container">
+        <img src={item.imgUrls[0]} className="item-img img1" alt="Eye 1" />
+        <img src={item.imgUrls[1]} className="item-img img2" alt="Eye 2" />
+      </div>
       <div className="item-content">
         <p className="item-title">{item.name}</p>
         <ul className="item-attributes">
@@ -41,9 +44,9 @@ const EyeProducts = () => {
   ));
 
   return (
-    <section class="section-items">
+    <section class="section-items" id="eye-products">
       <div class="container center-text">
-        <h2 class="heading-secondary">Our Eye Products</h2>
+        <h2 class="heading-secondary color-change">Our Eye Products</h2>
       </div>
       <div class="container grid grid--3-cols margin-bottom-md">{eyeItem}</div>
     </section>
