@@ -58,11 +58,11 @@
   color: #333;
   padding: 1rem 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border-radius: 9px;
   font: inherit;
-  width: 13rem;
+  width: 15rem;
   height: 4rem;
   margin: 0 5rem;
 }

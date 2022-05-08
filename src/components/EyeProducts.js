@@ -44,11 +44,13 @@ const EyeProducts = () => {
   ));
 
   return (
-    <section class="section-items" id="eye-products">
-      <div class="container center-text">
-        <h2 class="heading-secondary color-change">Our Eye Products</h2>
+    <section className="section-items" id="eye-products">
+      <div className="container center-text">
+        <h2 className="heading-secondary color-change">Our Eye Products</h2>
       </div>
-      <div class="container grid grid--3-cols margin-bottom-md">{eyeItem}</div>
+      <div className="container grid grid--3-cols margin-bottom-md">
+        {eyeItem}
+      </div>
     </section>
   );
 };
