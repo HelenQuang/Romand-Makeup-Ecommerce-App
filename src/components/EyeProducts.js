@@ -1,28 +1,32 @@
-import React from "react";
-
-const Dummy_eye = [
-  {
-    name: "Pampas Garden",
-    price: 23.9,
-    colors: ["#01 Pampas Garden"],
-    imgUrls: [
-      "https://img.joomcdn.net/93365160e42cd8d24d1e32f9a20c3516a6c2b1de_original.jpeg",
-      "https://img.joomcdn.net/8aa5a47714381d1153a6a234673c44bf82875d74_original.jpeg",
-    ],
-  },
-  {
-    name: "Maghogany Garden",
-    price: 23.9,
-    colors: ["#02 Maghogany Garden"],
-    imgUrls: [
-      "https://img.joomcdn.net/0cf002c3d2ea9d1f5a30327e032774ed43733002_original.jpeg",
-      "https://img.joomcdn.net/c338fa8b2c0ec26d951e2c431ff9008492accdb1_original.jpeg",
-    ],
-  },
-];
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase.config";
+import { toast } from "react-toastify";
 
 const EyeProducts = () => {
-  const eyeItem = Dummy_eye.map((item) => (
+  const [listings, setListings] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchListings();
+  }, []);
+
+  const fetchListings = async () => {
+    try {
+      const listingRef = collection(db, "eyes");
+
+      const listingSnapshot = await getDocs(listingRef);
+
+      const listings = listingSnapshot.docs.map((doc) => doc.data());
+
+      setListings(listings);
+      setLoading(false);
+    } catch (error) {
+      toast.error("Could not fetch listings");
+    }
+  };
+
+  const eyeItem = listings.map((item) => (
     <div className="item">
       <div className="img-container">
         <img src={item.imgUrls[0]} className="item-img img1" alt="Eye 1" />

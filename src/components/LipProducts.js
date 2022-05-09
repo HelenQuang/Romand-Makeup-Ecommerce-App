@@ -1,40 +1,32 @@
-import { useEffect } from "react";
-
-const Dummy_lip = [
-  {
-    name: "Glasting water gloss",
-    price: 11,
-    colors: ["#00 Meteor Track", "#01 Sanho Crush", "#02 Night Marine"],
-    imgUrls: [
-      "https://img.joomcdn.net/5c26a9c6e6f488791c65475028a20fa7cac16949_original.jpeg",
-      "https://img.joomcdn.net/a795c48080ccaed831e025614907a952cf66c76b_original.jpeg",
-    ],
-  },
-  {
-    name: "Milktea Velvet Tint",
-    price: 12.9,
-    colors: [
-      "#01 Red Tea",
-      "#02 Chocolate Tea",
-      "#03 Cinnamon Tea",
-      "#04 Caramel Tea",
-    ],
-    imgUrls: [
-      "https://img.joomcdn.net/68adbad0e4f4d91e33441fa5e77e5cd0456e65c9_original.jpeg",
-      "https://img.joomcdn.net/cc8e0f8917bbdc9ea0e6697ff7420cd9768c506e_original.jpeg",
-    ],
-  },
-];
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase.config";
+import { toast } from "react-toastify";
 
 const LipProducts = () => {
-  //Fetch products
-  // useEffect(() => {
-  //   const fetchLips = async () => {
-  //     const res = await fetch("");
-  //   };
-  // }, []);
+  const [listings, setListings] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const lipItem = Dummy_lip.map((item) => (
+  useEffect(() => {
+    fetchListings();
+  }, []);
+
+  const fetchListings = async () => {
+    try {
+      const listingRef = collection(db, "lips");
+
+      const listingSnapshot = await getDocs(listingRef);
+
+      const listings = listingSnapshot.docs.map((doc) => doc.data());
+
+      setListings(listings);
+      setLoading(false);
+    } catch (error) {
+      toast.error("Could not fetch listings");
+    }
+  };
+
+  const lipItem = listings.map((item) => (
     <div className="item">
       <div className="img-container">
         <img src={item.imgUrls[0]} className="item-img img1" alt="Lip 1" />
