@@ -9,6 +9,8 @@ import { db } from "../firbase.config";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { toast } from "react-toastify";
 
+import OAuth from "./OAuth";
+
 const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -87,6 +89,7 @@ const Signup = () => {
               <button className="btn btn--form">Creat Account</button>
             </form>
           </div>
+          <OAuth />
 
           <Link to="/login" className="login-text">
             Already Have An Account?

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 
+import OAuth from "./OAuth";
+
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -65,6 +67,8 @@ const Login = () => {
               <button className="btn btn--form">Log In</button>
             </form>
           </div>
+
+          <OAuth />
 
           <Link to="/forgotpassword" className="login-text">
             Forgot Your Password?
