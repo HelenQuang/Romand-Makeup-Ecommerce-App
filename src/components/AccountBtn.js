@@ -9,19 +9,31 @@ const AccountBtn = () => {
 
   useEffect(() => {
     setUser(auth.currentUser);
-  }, []);
+  }, [auth.currentUser]);
 
   return (
-    <button
-      className="button"
-      onClick={() => {
-        navigate("/login");
-      }}
-    >
+    <button className="button">
       <span className="cart-icon">
         <ion-icon name="person"></ion-icon>
       </span>
-      {user ? <span>{user.displayName}</span> : <span>Account</span>}
+      {user && (
+        <span
+          onClick={() => {
+            navigate("/account");
+          }}
+        >
+          {user.displayName}
+        </span>
+      )}
+      {!user && (
+        <span
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Account
+        </span>
+      )}
     </button>
   );
 };

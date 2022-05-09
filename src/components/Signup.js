@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { db } from "../firbase.config";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ const Signup = () => {
 
       navigate("/");
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong. Please try again!");
     }
   };
 

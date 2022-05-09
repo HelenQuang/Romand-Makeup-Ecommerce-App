@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,10 +30,10 @@ const Login = () => {
       );
 
       if (userCredential.user) {
-        navigate("/");
+        navigate("/account");
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Email or password is incorrect. Please try again!");
     }
   };
 

@@ -59,10 +59,11 @@
   padding: 1rem 1rem;
   display: flex;
   justify-content: space-around;
+  gap: 1.2rem;
   align-items: center;
   border-radius: 9px;
   font: inherit;
-  width: 15rem;
+  width: fit-content;
   height: 4rem;
   margin: 0 5rem;
 }
