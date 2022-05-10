@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import CartContext from "../store/CartContext";
 
 const CartBtn = () => {
   const navigate = useNavigate();
-  // const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
-  // const { items } = useContext(CartContext);
+  const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
+  const { items } = useContext(CartContext);
 
-  // const numberOfCartItem = items.reduce((curNumber, item) => {
-  //   return curNumber + item.amount;
-  // }, 0);
+  const numberOfCartItem = items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
 
   //const btnClasses = `${styles.button} ${btnIsHighlighted ? styles.bump : ""}`;
 
@@ -38,7 +40,7 @@ const CartBtn = () => {
         <ion-icon name="cart"></ion-icon>
       </span>
       <span>Cart</span>
-      <span className="badge">3</span>
+      <span className="badge">{numberOfCartItem}</span>
     </button>
   );
 };

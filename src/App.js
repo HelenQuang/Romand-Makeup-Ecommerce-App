@@ -17,9 +17,11 @@ import PaymentPage from "./pages/PaymentPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
+import CartProvider from "./store/CartProvider";
+
 function App() {
   return (
-    <>
+    <CartProvider>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -36,7 +38,7 @@ function App() {
         position="top-center"
         style={{ width: "50rem", fontSize: "1.8rem" }}
       />
-    </>
+    </CartProvider>
   );
 }
 

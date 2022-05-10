@@ -1,4 +1,4 @@
-import React from "react";
+import { toast } from "react-toastify";
 
 const CTA = () => {
   return (
@@ -18,7 +18,14 @@ const CTA = () => {
               <input id="email" type="email" placeholder="Your email" />
             </div>
 
-            <button className="btn btn--form">Subcribe</button>
+            <button
+              className="btn btn--form"
+              onClick={() => {
+                toast.success("Thank you for subcribing us!");
+              }}
+            >
+              Subcribe
+            </button>
           </form>
         </div>
       </div>

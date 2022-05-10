@@ -14,9 +14,7 @@ const EyeProducts = () => {
   const fetchListings = async () => {
     try {
       const listingRef = collection(db, "eyes");
-
       const listingSnapshot = await getDocs(listingRef);
-
       const listings = listingSnapshot.docs.map((doc) => doc.data());
 
       setListings(listings);
@@ -27,7 +25,7 @@ const EyeProducts = () => {
   };
 
   const eyeItem = listings.map((item) => (
-    <div className="item">
+    <div key={item.id} className="item">
       <div className="img-container">
         <img src={item.imgUrls[0]} className="item-img img1" alt="Eye 1" />
         <img src={item.imgUrls[1]} className="item-img img2" alt="Eye 2" />
