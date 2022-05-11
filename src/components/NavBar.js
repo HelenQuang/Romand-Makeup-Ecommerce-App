@@ -12,12 +12,12 @@ const NavBar = () => {
               <img className="logo" alt="Romand logo" src={logo} />
             </a>
             <li>
-              <a className="main-nav-link" href="#lip-products">
+              <a className="main-nav-link" href="/#lip-products">
                 Our Lip Products
               </a>
             </li>
             <li>
-              <a className="main-nav-link" href="#eye-products">
+              <a className="main-nav-link" href="/#eye-products">
                 Our Eye Products
               </a>
             </li>

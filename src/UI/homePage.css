@@ -277,6 +277,22 @@
   right: 0;
 }
 
+.btn--outline-cart {
+  margin: 2rem 0 0 7rem;
+}
+
+.btn--outline-cart:link,
+.btn--outline-cart:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline-cart:hover,
+.btn--outline-cart:active {
+  background-color: #f98896;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
 /**************************/
 /* CTA SECTION */
 /**************************/
