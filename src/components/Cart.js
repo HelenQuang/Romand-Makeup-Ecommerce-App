@@ -23,6 +23,7 @@ const Cart = () => {
             <h2 className="heading-secondary">Your Cart</h2>
             {items.map((item) => (
               <CartItem
+                key={item.id}
                 item={item}
                 onRemove={onRemoveItemHandler.bind(null, item.id)}
                 onAdd={onAddItemHandler.bind(null, item)}
@@ -32,7 +33,7 @@ const Cart = () => {
 
           <div className="cart-subtotal">
             <span className="subtotal">Subtotal:</span>
-            <span className="price">€ {totalAmount.toFixed(1)}</span>
+            <span className="price">€ {totalAmount}</span>
           </div>
           <div className="cart-btn">
             <button

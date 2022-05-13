@@ -8,11 +8,10 @@ const OrderSummary = () => {
 
   const shippingCost = totalAmount < 50 ? 5 : 0;
 
-  const subtotal =
-    totalAmount < 50 ? totalAmount + shippingCost : totalAmount.toFixed(1);
+  const subtotal = totalAmount < 50 ? totalAmount + shippingCost : totalAmount;
 
   const cartItems = items.map((item) => (
-    <li className="cart-items">
+    <li className="cart-items" key={item.id}>
       <div>
         <img className="cart-img" src={item.imgUrls[0]} alt={item.name} />
       </div>
@@ -35,7 +34,8 @@ const OrderSummary = () => {
           </div>
           <div className="cart-subtotal">
             <span className="subtotal">Shipping cost:</span>
-            <span className="price">€ {shippingCost}</span>
+            <span className="price">€ {shippingCost} </span>
+            <span className="subtext">(Free shipping for orders over €50)</span>
           </div>
           <div className="cart-subtotal">
             <span className="subtotal">Subtotal:</span>

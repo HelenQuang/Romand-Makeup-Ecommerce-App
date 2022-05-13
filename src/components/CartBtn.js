@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import CartContext from "../store/CartContext";
 
 const CartBtn = () => {
@@ -11,27 +11,28 @@ const CartBtn = () => {
     return curNumber + item.amount;
   }, 0);
 
-  //const btnClasses = `${styles.button} ${btnIsHighlighted ? styles.bump : ""}`;
+  const btnClasses = btnIsHighlighted ? "button bump" : "button";
 
-  // useEffect(() => {
-  //   if (items.length === 0) {
-  //     return;
-  //   } else {
-  //     setBtnIsHighlighted(true);
+  useEffect(() => {
+    if (items.length === 0) {
+      return;
+    } else {
+      setBtnIsHighlighted(true);
 
-  //     const timer = setTimeout(() => {
-  //       setBtnIsHighlighted(false);
-  //     }, 300);
+      const timer = setTimeout(() => {
+        setBtnIsHighlighted(false);
+      }, 300);
 
-  //     return () => {
-  //       clearTimeout(timer);
-  //     };
-  //   }
-  // }, [items]);
+      //Clean up function
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [items]);
 
   return (
     <button
-      className="button"
+      className={btnClasses}
       onClick={() => {
         navigate("/cart");
       }}
