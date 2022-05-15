@@ -34,7 +34,7 @@ const ShippingInfo = ({ submitOrderHandler }) => {
           <div className="shipping-text-box">
             <h2 className="heading-secondary">Shipping Information</h2>
           </div>
-          <form className="shipping-form">
+          <form className="shipping-form" onSubmit={submitFormHandler}>
             <div>
               <input
                 id="firstname"
@@ -83,11 +83,10 @@ const ShippingInfo = ({ submitOrderHandler }) => {
           </form>
           <button
             className="btn btn--edit"
-            type="submit"
-            onClick={() => {
-              navigate("/payment");
-              submitFormHandler();
-            }}
+            // type="submit"
+            // onClick={() => {
+            //   navigate("/payment");
+            // }}
           >
             Go to payment
           </button>

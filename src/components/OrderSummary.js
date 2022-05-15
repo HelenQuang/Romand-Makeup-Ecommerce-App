@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import CartContext from "../store/CartContext";
+import ShippingInfo from "./ShippingInfo";
 
 const OrderSummary = () => {
   const navigate = useNavigate();
@@ -25,33 +26,38 @@ const OrderSummary = () => {
   ));
 
   return (
-    <section className="section-summary">
-      <div className="container">
-        <div className="cart">
-          <div className="cart-text-box">
-            <h2 className="heading-secondary">Order Summary</h2>
-            {cartItems}
+    <div>
+      <section className="section-summary">
+        <div className="container">
+          <div className="cart">
+            <div className="cart-text-box">
+              <h2 className="heading-secondary">Order Summary</h2>
+              {cartItems}
+            </div>
+            <div className="cart-subtotal">
+              <span className="subtotal">Shipping cost:</span>
+              <span className="price">€ {shippingCost} </span>
+              <span className="subtext">
+                (Free shipping for orders over €50)
+              </span>
+            </div>
+            <div className="cart-subtotal">
+              <span className="subtotal">Subtotal:</span>
+              <span className="price">€ {subtotal}</span>
+            </div>
+            <button
+              className="btn btn--edit"
+              onClick={() => {
+                navigate("/cart");
+              }}
+            >
+              Return to cart
+            </button>
           </div>
-          <div className="cart-subtotal">
-            <span className="subtotal">Shipping cost:</span>
-            <span className="price">€ {shippingCost} </span>
-            <span className="subtext">(Free shipping for orders over €50)</span>
-          </div>
-          <div className="cart-subtotal">
-            <span className="subtotal">Subtotal:</span>
-            <span className="price">€ {subtotal}</span>
-          </div>
-          <button
-            className="btn btn--edit"
-            onClick={() => {
-              navigate("/cart");
-            }}
-          >
-            Return to cart
-          </button>
         </div>
-      </div>
-    </section>
+      </section>
+      <ShippingInfo />
+    </div>
   );
 };
 

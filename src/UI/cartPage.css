@@ -20,14 +20,14 @@
 
 .cart .heading-secondary {
   color: inherit;
-  margin: 0 0 3rem 5rem;
+  margin: 0 0 3rem 0;
 }
 
 .cart-text {
   font-size: 1.8rem;
   font-weight: 500;
   text-align: center;
-  margin: 1rem 0 2rem 5rem;
+  margin: 1rem 0 2rem 0;
   text-decoration: none;
   color: #000;
 }
