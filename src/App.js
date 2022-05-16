@@ -19,28 +19,35 @@ import { ToastContainer } from "react-toastify";
 
 import CartProvider from "./store/CartProvider";
 
-// import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/login" element={<LogInPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/account" element={<AccountPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="/payment" element={<PaymentPage />} />
-        </Routes>
-      </Router>
-      <ToastContainer
-        position="top-center"
-        style={{ width: "50rem", fontSize: "1.8rem" }}
-      />
-    </CartProvider>
+    <PayPalScriptProvider
+      options={{
+        "client-id":
+          "AXOYnZ0MWDVtmR2w2qQwAbCe9F6PrC7k5oMpwfh1Sd3cz4Cky8OoTNtv7YM9w1Cenle2ZO0vCK9HjssS",
+      }}
+    >
+      <CartProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/login" element={<LogInPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/account" element={<AccountPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/payment" element={<PaymentPage />} />
+          </Routes>
+        </Router>
+        <ToastContainer
+          position="top-center"
+          style={{ width: "50rem", fontSize: "1.8rem" }}
+        />
+      </CartProvider>
+    </PayPalScriptProvider>
   );
 }
 

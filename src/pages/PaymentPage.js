@@ -1,7 +1,7 @@
-import React from "react";
+import PaypalPayment from "../components/PaypalPayment";
 
 const PaymentPage = () => {
-  return <div>PaymentPage</div>;
+  return <PaypalPayment />;
 };
 
 export default PaymentPage;
