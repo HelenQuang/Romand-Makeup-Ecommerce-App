@@ -1,7 +1,15 @@
 import CartContext from "./CartContext";
 import { useReducer } from "react";
 
-const initialCartState = { items: [], totalAmount: 0 };
+const initialCartState = {
+  items: localStorage.getItem("items")
+    ? JSON.parse(localStorage.getItem("items"))
+    : [],
+
+  totalAmount: localStorage.getItem("totalAmount")
+    ? JSON.parse(localStorage.getItem("totalAmount"))
+    : 0,
+};
 
 const cartReducerFn = (state, action) => {
   if (action.type === "ADD_ITEM") {
@@ -27,6 +35,9 @@ const cartReducerFn = (state, action) => {
       updatedItems = state.items.concat(action.item);
     }
 
+    localStorage.setItem("items", JSON.stringify(updatedItems));
+    localStorage.setItem("totalAmount", JSON.stringify(updatedTotalAmount));
+
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
 
@@ -51,6 +62,9 @@ const cartReducerFn = (state, action) => {
       updatedItems = [...state.items];
       updatedItems[existingCartItemIndex] = updatedItem;
     }
+
+    localStorage.setItem("items", JSON.stringify(updatedItems));
+    localStorage.setItem("totalAmount", JSON.stringify(updatedTotalAmount));
 
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }

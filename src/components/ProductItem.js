@@ -23,7 +23,6 @@ const ProductItem = ({ productListings }) => {
               onSubmit={(e) => {
                 e.preventDefault();
                 const chosenItem = { ...item, chosenColor: chosenColor };
-                localStorage.setItem(chosenItem, "cart");
                 addItem(chosenItem);
               }}
             >

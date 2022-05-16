@@ -19,7 +19,7 @@ import { ToastContainer } from "react-toastify";
 
 import CartProvider from "./store/CartProvider";
 
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+// import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 function App() {
   return (

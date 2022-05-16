@@ -2,7 +2,7 @@ import lip from "../images/lip.jpeg";
 
 const LipHero = () => {
   return (
-    <section className="section-hero">
+    <section className="section-hero" id="lip-hero">
       <div className="promotion-bar">
         <span></span>
       </div>

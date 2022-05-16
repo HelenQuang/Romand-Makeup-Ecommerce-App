@@ -352,6 +352,18 @@ header {
   color: #aaa;
 }
 
+.btn--cta {
+  background-color: #f98895c2;
+  color: #555;
+  padding: 1.2rem 2rem;
+  margin: 2rem 0 0 5rem;
+}
+
+.btn--cta:hover {
+  background-color: #f87887;
+  color: #555;
+}
+
 /**************************/
 /* FOOTER */
 /**************************/

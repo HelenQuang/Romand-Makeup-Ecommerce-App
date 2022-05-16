@@ -7,7 +7,7 @@ const NavBar = ({ headerClass }) => {
     <header className={headerClass}>
       <nav className="main-nav">
         <ul className="main-nav-list">
-          <a href="/">
+          <a href="/#lip-hero">
             <img className="logo" alt="Romand logo" src={logo} />
           </a>
           <li>

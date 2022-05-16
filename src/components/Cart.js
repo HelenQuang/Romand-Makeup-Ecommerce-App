@@ -45,7 +45,7 @@ const Cart = () => {
               Continue shopping
             </button>
             <button
-              className="btn btn--form"
+              className="btn btn--cta"
               onClick={() => {
                 navigate("/checkout");
               }}

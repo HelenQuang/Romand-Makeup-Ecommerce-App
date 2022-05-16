@@ -25,7 +25,7 @@ const AccountPage = () => {
                   Continue shopping with us
                 </button>
                 <button
-                  className="btn btn--form"
+                  className="btn btn--cta"
                   onClick={() => {
                     auth.signOut();
                     navigate("/");

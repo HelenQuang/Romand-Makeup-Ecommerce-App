@@ -81,15 +81,17 @@ const ShippingInfo = ({ submitOrderHandler }) => {
               />
             </div>
           </form>
-          <button
-            className="btn btn--edit"
-            // type="submit"
-            // onClick={() => {
-            //   navigate("/payment");
-            // }}
-          >
-            Go to payment
-          </button>
+          <div className="cart-btn">
+            <button
+              className="btn btn--form"
+              // type="submit"
+              // onClick={() => {
+              //   navigate("/payment");
+              // }}
+            >
+              Go to payment
+            </button>
+          </div>
         </div>
       </div>
     </section>

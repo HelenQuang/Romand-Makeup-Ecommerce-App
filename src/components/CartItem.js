@@ -14,7 +14,7 @@ const CartItem = ({ item, onRemove, onAdd }) => {
         <button className="btn btn--form" onClick={onRemove}>
           -
         </button>
-        <button className="btn btn--form" onClick={onAdd}>
+        <button className="btn btn--cta" onClick={onAdd}>
           +
         </button>
       </div>

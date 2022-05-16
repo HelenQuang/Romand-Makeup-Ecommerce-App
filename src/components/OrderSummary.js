@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import CartContext from "../store/CartContext";
 import ShippingInfo from "./ShippingInfo";
+import CartContext from "../store/CartContext";
+import { useContext } from "react";
 
 const OrderSummary = () => {
   const navigate = useNavigate();
+
   const { items, totalAmount } = useContext(CartContext);
 
   const shippingCost = totalAmount < 50 ? 5 : 0;
@@ -45,14 +46,16 @@ const OrderSummary = () => {
               <span className="subtotal">Subtotal:</span>
               <span className="price">€ {subtotal}</span>
             </div>
-            <button
-              className="btn btn--edit"
-              onClick={() => {
-                navigate("/cart");
-              }}
-            >
-              Return to cart
-            </button>
+            <div className="cart-btn">
+              <button
+                className="btn btn--form"
+                onClick={() => {
+                  navigate("/cart");
+                }}
+              >
+                Return to cart
+              </button>
+            </div>
           </div>
         </div>
       </section>

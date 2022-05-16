@@ -19,7 +19,7 @@ const CTA = () => {
             </div>
 
             <button
-              className="btn btn--form"
+              className="btn btn--cta"
               onClick={() => {
                 toast.success("Thank you for subcribing us!");
               }}
