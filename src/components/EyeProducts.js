@@ -6,7 +6,6 @@ import ProductItem from "./ProductItem";
 
 const EyeProducts = () => {
   const [listings, setListings] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchListings();
@@ -19,7 +18,6 @@ const EyeProducts = () => {
       const listings = listingSnapshot.docs.map((doc) => doc.data());
 
       setListings(listings);
-      setLoading(false);
     } catch (error) {
       toast.error("Could not fetch listings");
     }
