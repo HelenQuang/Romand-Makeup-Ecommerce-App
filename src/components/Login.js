@@ -33,6 +33,7 @@ const Login = () => {
 
       if (userCredential.user) {
         navigate("/account");
+        localStorage.setItem("userEmail", auth.currentUser.email);
       }
     } catch (error) {
       toast.error("Email or password is incorrect. Please try again!");

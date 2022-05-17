@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { getAuth } from "firebase/auth";
+import { useContext } from "react";
+import CartContext from "../store/CartContext";
 
 const AccountPage = () => {
   const navigate = useNavigate();
   const auth = getAuth();
+  const { clearItem } = useContext(CartContext);
 
   return (
     <div>
@@ -29,6 +32,8 @@ const AccountPage = () => {
                   onClick={() => {
                     auth.signOut();
                     navigate("/");
+                    localStorage.removeItem("userEmail");
+                    clearItem();
                   }}
                 >
                   Log out
