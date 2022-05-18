@@ -37,7 +37,7 @@ const ProductItem = ({ productListings }) => {
                   </option>
                 ))}
               </select>
-              <button className="btn btn--outline-cart  " type="submit">
+              <button className="btn btn--outline-cart" type="submit">
                 Add To Cart
               </button>
             </form>

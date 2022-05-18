@@ -6,7 +6,6 @@ const LipHero = () => {
       <div className="promotion-bar">
         <span></span>
       </div>
-
       <div>
         <div className="hero">
           <div className="hero-text-box">

@@ -26,7 +26,7 @@ const LipProducts = () => {
   return (
     <section className="section-items" id="lip-products">
       <div className="container center-text">
-        <h2 className="heading-secondary color-change">Our Lip Products</h2>
+        <h2 className="heading-secondary">Our Lip Products</h2>
       </div>
 
       <ProductItem productListings={listings} />

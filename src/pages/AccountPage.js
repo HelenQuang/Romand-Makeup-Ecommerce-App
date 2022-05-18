@@ -33,6 +33,8 @@ const AccountPage = () => {
                     auth.signOut();
                     navigate("/");
                     localStorage.removeItem("userEmail");
+                    localStorage.removeItem("items");
+                    localStorage.removeItem("totalAmount");
                     clearItem();
                   }}
                 >

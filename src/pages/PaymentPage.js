@@ -10,13 +10,15 @@ const PaymentPage = () => {
   const { totalAmount } = useContext(CartContext);
 
   const shippingCost = totalAmount < 50 ? 5 : 0;
-  const subtotal = totalAmount < 50 ? totalAmount + shippingCost : totalAmount;
+  const total = totalAmount < 50 ? totalAmount + shippingCost : totalAmount;
+  const subtotal = total.toFixed(2);
 
   return (
     <PayPalScriptProvider
       options={{
         "client-id":
           "AXOYnZ0MWDVtmR2w2qQwAbCe9F6PrC7k5oMpwfh1Sd3cz4Cky8OoTNtv7YM9w1Cenle2ZO0vCK9HjssS",
+        currency: "EUR",
       }}
     >
       <NavBar />
@@ -41,6 +43,7 @@ const PaymentPage = () => {
                     purchase_units: [
                       {
                         amount: {
+                          currency_code: "EUR",
                           value: subtotal,
                         },
                       },

@@ -6,13 +6,14 @@ import CartItem from "./CartItem";
 const Cart = () => {
   const navigate = useNavigate();
   const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
+  const subtotal = totalAmount.toFixed(1);
 
   const onAddItemHandler = (item) => {
     addItem({ ...item, amount: 1 });
   };
 
-  const onRemoveItemHandler = (id) => {
-    removeItem(id);
+  const onRemoveItemHandler = (chosenColor) => {
+    removeItem(chosenColor);
   };
 
   return (
@@ -23,9 +24,9 @@ const Cart = () => {
             <h2 className="heading-secondary">Your Cart</h2>
             {items.map((item) => (
               <CartItem
-                key={item.id}
+                key={item.chosenColor}
                 item={item}
-                onRemove={onRemoveItemHandler.bind(null, item.id)}
+                onRemove={onRemoveItemHandler.bind(null, item.chosenColor)}
                 onAdd={onAddItemHandler.bind(null, item)}
               />
             ))}
@@ -33,7 +34,7 @@ const Cart = () => {
 
           <div className="cart-subtotal">
             <span className="subtotal">Subtotal:</span>
-            <span className="price">€ {totalAmount}</span>
+            <span className="price">€ {subtotal}</span>
           </div>
           <div className="cart-btn">
             <button

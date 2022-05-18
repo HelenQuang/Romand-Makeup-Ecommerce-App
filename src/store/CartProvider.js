@@ -17,7 +17,7 @@ const cartReducerFn = (state, action) => {
       state.totalAmount + action.item.price * action.item.amount;
 
     const existingCartItemIndex = state.items.findIndex(
-      (item) => item.id === action.item.id
+      (item) => item.chosenColor === action.item.chosenColor
     );
     const existingCartItem = state.items[existingCartItemIndex];
 
@@ -43,7 +43,7 @@ const cartReducerFn = (state, action) => {
 
   if (action.type === "REMOVE_ITEM") {
     const existingCartItemIndex = state.items.findIndex(
-      (item) => item.id === action.id
+      (item) => item.chosenColor === action.chosenColor
     );
     const existingCartItem = state.items[existingCartItemIndex];
 
@@ -52,7 +52,9 @@ const cartReducerFn = (state, action) => {
     let updatedItems;
 
     if (existingCartItem.amount === 1) {
-      updatedItems = state.items.filter((item) => item.id !== action.id);
+      updatedItems = state.items.filter(
+        (item) => item.chosenColor !== action.chosenColor
+      );
     } else {
       const updatedItem = {
         ...existingCartItem,
@@ -86,8 +88,8 @@ const CartProvider = ({ children }) => {
     dispatchCartAction({ type: "ADD_ITEM", item: item });
   };
 
-  const removeItemFromCartHandler = (id) => {
-    dispatchCartAction({ type: "REMOVE_ITEM", id: id });
+  const removeItemFromCartHandler = (chosenColor) => {
+    dispatchCartAction({ type: "REMOVE_ITEM", chosenColor: chosenColor });
   };
 
   const clearItemFromCartHandler = () => {

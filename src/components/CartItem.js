@@ -1,6 +1,6 @@
 const CartItem = ({ item, onRemove, onAdd }) => {
   return (
-    <li key={item.id} className="cart-items">
+    <li key={item.chosenColor} className="cart-items">
       <div>
         <img className="cart-img" src={item.imgUrls[0]} alt={item.name} />
       </div>

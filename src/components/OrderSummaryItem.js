@@ -5,11 +5,10 @@ const OrderSummaryItem = () => {
   const { items, totalAmount } = useContext(CartContext);
 
   const shippingCost = totalAmount < 50 ? 5 : 0;
-
-  const subtotal = totalAmount < 50 ? totalAmount + shippingCost : totalAmount;
+  const total = totalAmount < 50 ? totalAmount + shippingCost : totalAmount;
 
   const cartItems = items.map((item) => (
-    <li className="cart-items" key={item.id}>
+    <li className="cart-items" key={item.chosenColor}>
       <div>
         <img className="cart-img" src={item.imgUrls[0]} alt={item.name} />
       </div>
@@ -34,8 +33,8 @@ const OrderSummaryItem = () => {
         <span className="subtext">(Free shipping for orders over €50)</span>
       </div>
       <div className="cart-subtotal">
-        <span className="subtotal">Subtotal:</span>
-        <span className="price">€ {subtotal}</span>
+        <span className="subtotal">Total:</span>
+        <span className="price">€ {total.toFixed(1)}</span>
       </div>
     </>
   );
