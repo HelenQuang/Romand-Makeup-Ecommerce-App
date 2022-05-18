@@ -21,6 +21,13 @@ This is an e-commerce website where you can buy various makeup products and pay 
 
 ## DEMO:
 
+https://user-images.githubusercontent.com/94285120/169112457-7ee9f076-4062-4f6d-9dfe-267ad456b88f.mp4
+
+https://user-images.githubusercontent.com/94285120/169112502-93a8f2a5-6b05-4565-877a-c99c985de670.mp4
+
+https://user-images.githubusercontent.com/94285120/169112560-2f637771-76fa-4d2d-87e5-3823eda1964a.mp4
+
+
 ## DEMO Link:
 
 https://romand-ecommerce-helen.netlify.app/
